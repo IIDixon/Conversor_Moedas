@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                   textAlign: TextAlign.center,
                 ),
               );
-            default: // Resultado padrão
+            default: // Retorno padrão
               if(snapshot.hasError){ // se ocorrer erro na conexão, retornará mensagem de que houve erro ao carregar os dados
                 return const Center(
                   child:
