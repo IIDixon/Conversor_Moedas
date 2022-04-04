@@ -90,6 +90,9 @@ class _HomePageState extends State<HomePage> {
                         const Icon(Icons.monetization_on, size: 150, color: Colors.amber),
                         const Divider(), // Separa os campos
                         buildTextField("Reais", "R\$", realController,_realChanged), // Função de construção do widget
+                        // Note que na chamado da função que definimos uma string como parâmetro na criação, não foi passado o parâmetro na chamada
+                        //  Isso ocorre porque quando passamos essa função no onChanged do textfield, o flutter interpreta que a String a ser passada
+                        // é o próprio texto que está sendo digitado no textfield
                         const Divider(), // Separa os campos
                         buildTextField("Dólares", "US\$", dolarController, _dolarChanged), // Função de construção do widget
                         const Divider(), // Separa os campos
@@ -110,6 +113,9 @@ Widget buildTextField(String label, String prefix, TextEditingController control
   return TextField(
     keyboardType: TextInputType.number,
     onChanged: function, // atribui a função passada por parâmetro
+    // Note que na chamado da função que definimos uma string como parâmetro na criação, não foi passado o parâmetro na chamada
+    //  Isso ocorre porque quando passamos essa função no onChanged do textfield, o flutter interpreta que a String a ser passada
+    // é o próprio texto que está sendo digitado no textfield
     controller: controller, // atribui o controller passado por parâmetro
     decoration: InputDecoration(
       labelText: label, // atribui a label passado por parâmetro
